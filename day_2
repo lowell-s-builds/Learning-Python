@@ -1,0 +1,47 @@
+# Day 2: 30 Days of Python Programming
+
+first_name,last_name = 'Lol','S'
+full_name = 'Lol S'
+country = 'United States'
+city = 'New York'
+age = 67
+year = 2026
+is_married = False
+is_true = True
+is_light_on = False
+
+print(type(first_name))
+print(type(last_name))
+print(type(full_name))
+print(type(country))
+print(type(city))
+print(type(age))
+print(type(year))
+print(type(is_married))
+print(type(is_light_on))
+print(type(is_true))
+
+print(len(first_name))
+
+num_one = 5 
+num_two = 4 
+
+num_1 = num_one + num_two 
+num_2 = num_two - num_one 
+num_3 = num_two*num_one
+num_4 = num_one/num_two
+num_5 = num_two%num_one
+num_6 = num_one**num_two
+num_7 = num_one//num_two
+
+radius = 30 # meters 
+area_of_circle = 3.14*radius**2
+circum_of_circle = 3.14*radius
+
+radiusinput=input('radius of circle?:')
+radiusinput=int(radiusinput)
+area_of_circle2 = 3.14*radiusinput**2
+print('Area of Circle is',area_of_circle2)
+
+
+# print(first_name)
