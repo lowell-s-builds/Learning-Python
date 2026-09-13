@@ -1,0 +1,97 @@
+# DAY 8 of learning python - DICTIONARIES 
+
+# A dictionary is a collection of unordered, modifiable(mutable) paired (key: value) data type.
+# it is like a overview of a variable with details (eg. picture with details like shutter,date,iso,aperature etc)-
+
+# person = {
+#     'first_name':'Asabeneh',
+#     'last_name':'Yetayeh',
+#     'age':250,
+#     'country':'Finland',
+#     'is_marred':True,
+#     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+#     'address':{
+#         'street':'Space street',
+#         'zipcode':'02210'
+#     }
+#     }
+
+# we can check the length of a dictionary aswell using len()
+
+# person = {
+#     'first_name':'Asabeneh',
+#     'last_name':'Yetayeh',
+#     'age':250,
+#     'country':'Finland',
+#     'is_marred':True,
+#     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+#     'address':{
+#         'street':'Space street',
+#         'zipcode':'02210'
+#     }
+#     }
+# print(person.get('first_name')) # Asabeneh
+# print(person.get('country'))    # Finland
+# print(person.get('skills')) #['JavaScript', 'React', 'Node', 'MongoDB', 'Python']
+# print(person.get('city'))   # None
+
+# if there isn't a key that exist it will result in "none" so using .get will give us the valve if the key exists
+
+### EXERCISES 
+
+# 1. Create an empty dictionary called dog
+
+dog = {}            # if you don't add anything to {} then it classifies it as a dict but if you do it is a set. set & dict use {}
+print(type(dog))
+
+# Add name, color, breed, legs, age to the dog dictionary
+
+dog['name'] = 'Whopper'
+dog['color'] = 'brown'
+dog['breed'] = 'Shitsu'
+dog['legs'] = 'short'
+dog['age'] = '2'
+
+print(dog)
+
+# Create a student dictionary and add first_name, last_name, gender, age, marital status, skills, country, city and address as keys for the dictionary
+
+student = {'first_name': 'Bob', 'last_name':'King','gender':'male','age':'16','martial status':'single','skills':['nothing'],'country':'Japan','City':'Tokyo','address':'Cherry Street'}
+
+print(student)
+
+# Get the length of the student dictionary
+
+print(len(student))
+
+# Get the value of skills and check the data type, it should be a list
+
+print(student['skills'])
+print(type(student)['skills'])
+
+# Modify the skills values by adding one or two skills
+
+student['skills'] = ['handsome','charismatic']
+
+print(student)
+# Get the dictionary keys as a list
+
+print(student.keys())
+
+# Get the dictionary values as a list
+
+print(student.values())
+
+# Change the dictionary to a list of tuples using items() method
+
+print(student.items()) # this changes to a list of tuples
+
+# Delete one of the items in the dictionary
+
+del student['martial status']
+
+# Delete one of the dictionaries
+
+del student
+
+print(student) # error 'student' not defined 
