@@ -1,0 +1,136 @@
+import math
+import numpy as np
+
+## Script for finding the area of a triangle using user input
+
+base = input('Enter base:')
+height = input('Enter height:')
+base = int(base)
+height = int(height)
+print('The area of the triangle is', base*height*0.5)
+
+## Script for finding the perimeter of a triangle using user input
+
+side_a = int(input('Enter side a:'))
+side_b = int(input('Enter side b:'))
+side_c = int(input('Enter side c:'))
+
+print('The perimeter of the triangle is',side_a+side_b+side_c)
+
+## Script for finding area and perimeter of rectangle 
+
+# length = int(input('Enter length:')) # can obviously use float values for more percision)
+# width = int(input('Enter width:'))
+
+print('The area of the rectangle is',length*width)
+print('The perimeter of the rectangle is',2*(length+width))
+
+## Script for finding area and circumference of circle 
+
+# radius = int(input('Enter radius of circle: '))
+
+print('the area of circle is',3.14*radius**2)
+print('the circumference is',2*3.14*radius)
+
+## Script for slope calculator 
+
+# # Define slope-intercept form y = mx + b
+m = 2
+b = -2
+
+# Slope
+slope = m
+
+# Y-intercept (x = 0)
+y_intercept = (0, b)
+
+# X-intercept (y = 0)
+x_intercept_x = b / -m
+x_intercept = (x_intercept_x, 0)
+
+print("Slope:", slope)
+print("Y-intercept:", y_intercept)
+print("X-intercept:", x_intercept)
+
+## Script for slop and Euclidean distance between points
+
+x1,y1,x2,y2 = 2,2,6,10
+
+slope1 = (y2-y1)/(x2-x1)
+
+dist = math.sqrt(((x1-x2)**2)+(y1-y2)**2)
+print('the slope is',slope1)
+print('the distance is',dist) 
+
+## Slop comparison 
+print(slope == slope1)
+
+## Calculating polynomial 
+
+x = -3 
+y = x**2 + 6*x + 9 
+print(y)
+
+## length of python and dragon
+
+print(len('python')==len('dragon'))
+
+## Use and operator to check if 'on' is found in both 'python' and 'dragon'
+
+print('on' in 'python' and 'on' in 'dragon')
+
+## Checking if a word in a sentence
+
+print('jargon' in 'I hope this course is not full of jargon')
+
+## checking if no on is both in dragon and python
+
+print('on' not in 'python' and 'on' not in 'dragon')
+
+## length of python and converting to float and the string
+
+print(str(float(len('python'))))
+print(type(str(float(len('python')))))
+
+## Checking if an number is even in python
+
+number = int(input('Input a number:'))
+
+if number % 2 == 0:
+    print(f"{number} is even")
+else: 
+    print(f"{number} is odd")
+
+## Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
+
+print(7 // 3) 
+print(int(2.7))
+
+## Check if type of '10' is equal to type of 10
+
+print(type('10') == type(10))
+
+## Check if int('9.8') is equal to 10
+
+# print(int('9.8') == 10) # this breaks 
+
+# Write a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+
+hours = int(input('Enter hours:'))
+
+rate = int(input('Enter rate per hour:'))
+
+print('Your weekly earning is',hours*rate)
+
+## Write a script that prompts the user to enter number of years. 
+## Calculate the number of seconds a person can live. Assume a person can live hundred years
+
+years = int(input('Enter number of years you have lived:'))
+
+print('You have lived for ', years*365*24*3600 ,'seconds')
+
+# Write a Python script that displays the following table (i asked chat to help, need for loop to make it easy)
+
+for i in range(1, 6):
+    row = [i, 1, i, i**2, i**3]
+    print(*row)
