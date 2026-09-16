@@ -1,0 +1,203 @@
+# Day 11 of learning Python - Functions
+
+import math
+
+# custom functions vs built in python functions 
+# both use the "def" keyword
+
+# syntax
+# Declaring a function
+# def function_name():
+    # codes
+
+# Calling a function
+# function_name()
+
+## ExampleCode with parameters 
+
+# def greetings (name):
+#     message = name + ', welcome to Python for Everyone!'
+#     return message
+
+# print(greetings('Asabeneh'))
+
+# def add_ten(num):
+#     ten = 10
+#     return num + ten
+# print(add_ten(90))
+
+# def square_number(x):
+#     return x * x
+# print(square_number(2))
+
+# def area_of_circle (r):
+#     PI = 3.14
+#     area = PI * r ** 2
+#     return area
+# print(area_of_circle(10))
+
+# def sum_of_numbers(n):
+#     total = 0
+#     for i in range(n+1):
+#         total+=i
+#     return total
+# print(sum_of_numbers(10)) # 55
+# print(sum_of_numbers(100)) # 5050
+
+# parameters are just required inputs that the user needs to include in the function. without it~ it cannot work
+
+# def sum_two_numbers(num_one, num_two): #idk why this has an error. could be zero-length error? nah it was because another function above it was defined
+
+#     sum = num_one + num_two
+#     return sum
+
+# print('Sum of two numbers: ', sum_two_numbers(1, 9))
+
+def sum_two_numbers(num_one,num_two):
+    sum = num_one + num_two
+    return sum
+
+print('Sum of two numbers: ', sum_two_numbers(1, 9))
+
+
+# # Arbitrary Number of Arguments 
+
+def sum_all_nums(*nums):
+    total = 0
+    for num in nums:
+        total += num     # same as total = total + num 
+    return total
+print(sum_all_nums(2, 3, 5)) # 10
+
+## EXERCISES 
+
+# Declare a function add_two_numbers. It takes two parameters and it returns a sum.
+
+
+def add_two_numbers(num1,num2):
+    sum = num1 + num2 
+    return sum
+print(add_two_numbers(5,20))
+
+
+# Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates area_of_circle.
+
+def area_of_circle(radius):
+    area = 3.14*radius**2
+    return area
+print('The area of a circle is {}'.format(area_of_circle(2)))
+
+# Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. 
+# Check if all the list items are number types. If not do give a reasonable feedback.
+
+def add_all_nums(*aug):
+    total = 0 
+    for num in aug:
+        total += num
+    return total
+print(add_all_nums(10,15,20))
+
+# Temperature in °C can be converted to °F using this formula: 
+# °F = (°C x 9/5) + 32. Write a function which converts °C to °F, convert_celsius_to-fahrenheit.
+
+def convert_celsius_to_fahrenheit(temp):
+    Fahrenheit = (temp * 9/5) + 32 
+    return Fahrenheit
+print('The temperature of {} C is equal to {} F'.format('10',convert_celsius_to_fahrenheit(10))) # need to find a way to have the input in the ending print line
+
+# Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
+
+def check_season(month):
+    if month in ['March','April','May']:
+        return 'spring'
+    elif month in ['June','July','August']:
+        return 'summer'
+    elif month in ['September','October','November']:
+        return 'fall'
+    elif month in ['December','January','Feburary']:
+        return 'winter'
+
+print(check_season('September'))
+
+# Write a function called calculate_slope which return the slope of a linear equation
+
+def calculate_slope(x1,x2,y1,y2):
+    m = (y2-y1)/(x2-x1)
+    return m 
+print('Slope is {}'.format(calculate_slope(1,3,1,5)))
+
+# Quadratic equation is calculated as follows: ax² + bx + c = 0. 
+# Write a function which calculates solution set of a quadratic equation, solve_quadratic_eqn.
+
+def solve_quadratic_eqn(a,b,c):
+    x = (-b + math.sqrt((b**2)-4*a*c))/(2*a)
+    x1 = (-b - math.sqrt((b**2)-(4*a*c)))/(2*a)
+    return x,x1 
+print('the roots of the quadratic equation is {} and {}'.format(*solve_quadratic_eqn(1,0,-9))) # I can definitely add a domain checker 
+
+# Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
+
+def print_list(list):
+    for num in list:
+        print(num)
+
+print_list(['1','2','3'])
+
+# Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
+
+def reverse_list(array):
+    new_array = list(reversed(array)) # forgot list() need this because it prints out the memory address.
+    return new_array
+
+print(reverse_list('abcd'))
+
+# Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
+
+# def capitalize_list_items(list):
+#     return list.upper()
+# print(capitalize_list_items(['a','b','c','d'])) # list.upper() doesnt work since its string based not list based 
+
+def capitalize_list_items(items):
+    return [item.upper() for item in items]
+
+print(capitalize_list_items(['a','b','c','d']))
+
+# Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+
+# def add_item(list,item):
+#     new_list = list.append(item) # this stores none as new_list so thats why its returns that 
+#     return new_list
+
+
+# print(add_item([2,4,7,8],10))
+
+def add_item(lst, item):
+    lst.append(item)
+    return lst
+
+print(add_item([2,4,7,8], 10))
+
+# Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
+
+def remove_item(lst,item):
+    lst.remove(item)
+    return lst
+print(remove_item([2,4,7,8], 8))
+
+# Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+
+# def sum_of_numbers(num):
+#     for nums in range(num,0,-1):
+#         nums = nums + num  
+#     else:
+#         print(nums)
+
+# sum_of_numbers(10)
+
+def sum_of_numbers(num):
+    total = 0
+    for i in range(num, -1, -1):   # from num → 0
+        total += i
+    return total
+
+print(sum_of_numbers(25))
