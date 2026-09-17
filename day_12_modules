@@ -1,0 +1,188 @@
+# Day 12 of learning Python - Modules 
+
+# Modules are a file that contains a set of codes or set of functions that can be included in a application.
+
+# Creating Module -> Improting a Module -> Importing functions from a module and renaming 
+
+# Import Built-in Modules
+
+# Like other programming languages we can also import modules by importing the file/function using the key word import. 
+# Let's import the common module we will use most of the time. 
+# Some of the common built-in modules: math, datetime, os,sys, random, statistics, collections, json,re
+
+# OS Module  
+# Sys Module 
+# Statistics Module 
+# Math Module 
+# String Module
+# Random Module
+
+from statistics import * # importing all the statistics modules
+ages = [20, 20, 4, 24, 25, 22, 26, 20, 23, 22, 26]
+print(mean(ages))       # ~22.9
+print(median(ages))     # 23
+print(mode(ages))       # 20
+print(stdev(ages))      # ~2.3
+
+import math
+print(math.pi)           # 3.141592653589793, pi constant
+print(math.sqrt(2))      # 1.4142135623730951, square root
+print(math.pow(2, 3))    # 8.0, exponential function
+print(math.floor(9.81))  # 9, rounding to the lowest
+print(math.ceil(9.81))   # 10, rounding to the highest
+print(math.log10(100))   # 2, logarithm with 10 as base
+
+
+# Write a function which generates a six digit/character random_user_id.
+
+import random
+import string
+
+import random
+import string
+
+def generate_random_user_id():
+    characters = string.ascii_letters + string.digits
+    user_id = ''.join(random.choice(characters) for _ in range(6))
+    return user_id
+
+random_user_id = generate_random_user_id()
+
+print(random_user_id)
+
+# Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). 
+# One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.
+
+# length = int(input('Enter how long string length: '))
+# occurance = int(input('Enter how many user ids: '))
+
+# def generate_random_user_id():
+#     characters = string.ascii_letters + string.digits
+#     for _ in range(0,occurance,1):
+#         user_id = ''.join(random.choice(characters) for _ in range(length))
+#         print(user_id)
+
+# user_id_gen_by_user = generate_random_user_id() # I may have coded this wrong but I think it works fine :3
+
+# Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
+
+from random import random, randint
+
+def rgb_color_gen():
+    red = randint(0,255)
+    green = randint(0,255)
+    blue = randint(0,255)
+    return [red,green,blue]
+
+red,green,blue = rgb_color_gen() # IMPORAANTTT I FORGOT THIS, this basically allows me to call from the function specific their indivudal values.
+
+print('rgb({},{},{})'.format(red,green,blue))
+print(rgb_color_gen())
+
+# Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. 
+# Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
+
+import random
+import string
+
+def list_of_hexa_colors():
+    hexa = string.ascii_letters[0:5] + string.digits
+    hexadecimal = ''.join(random.choice(hexa) for _ in range(6))
+    full = '#' + hexadecimal
+    return full 
+
+hex = list_of_hexa_colors()
+print('Your Hexadecimal is {}'.format(hex))
+
+def list_of_rgb_colors():
+    red = randint(0,255)
+    green = randint(0,255)
+    blue = randint(0,255)
+    return [red,green,blue]
+    
+red,green,blue = rgb_color_gen() # IMPORAANTTT I FORGOT THIS, this basically allows me to call from the function specific their indivudal values.
+    
+print('rgb({},{},{})'.format(red,green,blue))
+
+def generate_colors(id,num):
+    if id == 'hexa':
+        new2 = []
+        for _ in range(num):
+            new = list_of_hexa_colors()
+            new2.append(new)
+        else:
+            print(new2)
+    elif id == 'rgb':
+        new2 = []
+        for _ in range(num):
+            new = list_of_rgb_colors()
+            new2.append(new)
+        else:
+            print(new2)
+generate_colors('hexa',2)
+generate_colors('rgb',3)
+
+# ['#a5d803', '#810b17'] 
+# [[230, 88, 191], [255, 242, 40], [186, 181, 105]]
+# W IT WORKS I HAPPY - lol
+
+# Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
+
+import random
+
+def shuffle_list(lst):
+    random.shuffle(lst)
+    return lst
+
+print(shuffle_list([1,2,3,4,5,6,7,8,9]))
+
+# Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
+
+
+
+# def seven_random_numbers():
+#     numbers = string.digits
+#     mat = []
+#     for i in range(7):
+#         gen = random.choice(numbers)
+#         if gen in mat:
+#             # while gen in mat:
+#             while gen != mat[i-1:0]:
+#                  gen = random.choice(numbers)
+#             mat.append(gen)
+#         else:
+#             mat.append(gen)
+#     return mat
+
+         
+#     # array = ''.join()
+# print(seven_random_numbers())
+
+import random
+import string
+
+def seven_random_numbers():
+    numbers = string.digits
+    mat = []
+
+    for i in range(7):
+        gen = random.choice(numbers)
+
+        while gen in mat:
+            gen = random.choice(numbers)
+
+        mat.append(gen)
+
+    return mat
+
+print(seven_random_numbers())
+
+# SIMPLER APPROACH WITH BUILTI IN FUCTIONS BRUH 
+
+# import random
+
+# def seven_random_numbers():
+#     return random.sample(range(10), 7)
+
+# print(seven_random_numbers()) 
+
